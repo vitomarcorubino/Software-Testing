@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > CaseUtils</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">homework1</a>
+</div>
+
+<h1>Coverage Summary for Class: CaseUtils (homework1)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CaseUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (37/37)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package homework1;
+&nbsp;
+&nbsp;import java.util.HashSet;
+&nbsp;import java.util.Set;
+&nbsp;
+&nbsp;public class CaseUtils {
+&nbsp;    /**
+&nbsp;     * Converts an array of delimiters to a hash set of code points. Code point of space(32) is added
+&nbsp;     * as the default value. The generated hash set provides O(1) lookup time.
+&nbsp;     *
+&nbsp;     * @param delimiters  set of characters to determine capitalization, null means whitespace
+&nbsp;     * @return Set
+&nbsp;     */
+&nbsp;    private static Set&lt;Integer&gt; generateDelimiterSet(final char[] delimiters) {
+&nbsp;
+<b class="fc">&nbsp;        Set&lt;Integer&gt; delimiterHashSet = new HashSet&lt;Integer&gt;();</b>
+<b class="fc">&nbsp;        delimiterHashSet.add(Character.codePointAt(new char[]{&#39; &#39;}, 0));</b>
+<b class="fc">&nbsp;        if (delimiters == null || delimiters.length == 0) {</b>
+<b class="fc">&nbsp;            return delimiterHashSet;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        for (int index = 0; index &lt; delimiters.length; index++) {</b>
+<b class="fc">&nbsp;            delimiterHashSet.add(Character.codePointAt(delimiters, index));</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return delimiterHashSet;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Converts all the delimiter separated words in a String into camelCase,
+&nbsp;     * that is each word is made up of a title case character and then a series of
+&nbsp;     * lowercase characters.
+&nbsp;     *
+&nbsp;     * &lt;p&gt;
+&nbsp;     *     The delimiters represent a set of characters understood to separate words.
+&nbsp;     *     The first non-delimiter character after a delimiter will be capitalized.
+&nbsp;     *     The first String character may or may not be capitalized and it&#39;s determined by the user input
+&nbsp;     *     for capitalizeFirstLetter variable.
+&nbsp;     * &lt;/p&gt;
+&nbsp;     *
+&nbsp;     * &lt;p&gt; A {@code null} input String returns {@code null}. &lt;/p&gt;
+&nbsp;     *
+&nbsp;     * &lt;p&gt;A input string with only delimiter characters returns {@code &quot;&quot;}.&lt;/p&gt;
+&nbsp;     *
+&nbsp;     * Capitalization uses the Unicode title case, normally equivalent to upper case
+&nbsp;     * and cannot perform locale-sensitive mappings.
+&nbsp;     *
+&nbsp;     * @param str  the String to be converted to camelCase, may be null
+&nbsp;     * @param capitalizeFirstLetter boolean that determines if the first character of first word should be title case.
+&nbsp;     * @param delimiters  set of characters to determine capitalization, null and/or empty array means whitespace
+&nbsp;     * @return camelCase of String, {@code null} if null String input
+&nbsp;     */
+&nbsp;    public String toCamelCase(String str, final boolean capitalizeFirstLetter, final char... delimiters) {
+<b class="fc">&nbsp;        if (str == null || str.isEmpty()) {</b>
+<b class="fc">&nbsp;            return str;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        str = str.toLowerCase();</b>
+&nbsp;
+<b class="fc">&nbsp;        final int strLen = str.length();</b>
+<b class="fc">&nbsp;        final int[] newCodePoints = new int[strLen];</b>
+<b class="fc">&nbsp;        int outOffset = 0;</b>
+&nbsp;
+<b class="fc">&nbsp;        final Set&lt;Integer&gt; delimiterSet = generateDelimiterSet(delimiters);</b>
+<b class="fc">&nbsp;        boolean capitalizeNext = false;</b>
+&nbsp;
+<b class="fc">&nbsp;        if (capitalizeFirstLetter) {</b>
+<b class="fc">&nbsp;            capitalizeNext = true;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        for (int index = 0; index &lt; strLen; ) {</b>
+<b class="fc">&nbsp;            final int codePoint = str.codePointAt(index);</b>
+&nbsp;
+<b class="fc">&nbsp;            if (delimiterSet.contains(codePoint)) {</b>
+<b class="fc">&nbsp;                capitalizeNext = true;</b>
+<b class="fc">&nbsp;                if (outOffset == 0) {</b>
+<b class="fc">&nbsp;                    capitalizeNext = false;</b>
+&nbsp;                }
+<b class="fc">&nbsp;                index += Character.charCount(codePoint);</b>
+<b class="fc">&nbsp;            } else if (capitalizeNext) {</b>
+<b class="fc">&nbsp;                final int titleCaseCodePoint = Character.toTitleCase(codePoint);</b>
+<b class="fc">&nbsp;                newCodePoints[outOffset++] = titleCaseCodePoint;</b>
+<b class="fc">&nbsp;                index += Character.charCount(titleCaseCodePoint);</b>
+<b class="fc">&nbsp;                capitalizeNext = false;</b>
+<b class="fc">&nbsp;            } else {</b>
+<b class="fc">&nbsp;                newCodePoints[outOffset++] = codePoint;</b>
+<b class="fc">&nbsp;                index += Character.charCount(codePoint);</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+<b class="fc">&nbsp;        if (outOffset != 0) {</b>
+<b class="fc">&nbsp;            return new String(newCodePoints, 0, outOffset);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return &quot;&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * {@code CaseUtils} instances should NOT be constructed in
+&nbsp;     * standard programming. Instead, the class should be used as
+&nbsp;     * {@code CaseUtils.toCamelCase(&quot;foo bar&quot;, true, new char[]{&#39;-&#39;});}.
+&nbsp;     *
+&nbsp;     * &lt;p&gt;This constructor is public to permit tools that require a JavaBean
+&nbsp;     * instance to operate.&lt;/p&gt;
+&nbsp;     */
+<b class="fc">&nbsp;    public CaseUtils() {</b>
+&nbsp;
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-03 18:34</div>
+</div>
+</body>
+</html>
