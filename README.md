@@ -40,7 +40,7 @@ In relation to this type of test, statistics on generated inputs can be found in
 ## 📚 Documentation
 A full italian documentation can be found here: <br>
 
-[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1jiPd1M9VZr7YKUYfh1UiloI-DSH2-JkQ/view?usp=sharing) 
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/18fLF54KV-DJmYSXrm7AEL91NvANbEqWO/view?usp=drivesdk) 
 
 The documentation contains details about the selected tests and charts generated from the data collected during property-based testing.
 
