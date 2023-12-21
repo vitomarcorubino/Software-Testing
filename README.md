@@ -8,8 +8,23 @@ Using 7 steps approach of Specification-based methodology we tested `toCamelCase
 
 ## 🛡️ Structural testing
 It is a white-box testing approach which tests the structure of the source code.
-A **code coverage** report has been generated to identify code segments not covered by the test suite. The report indicated that the test suite covers 100% of the lines of code to be tested.
+A **code coverage** report has been generated using [JaCoCo](https://www.eclemma.org/jacoco/) in order to identify code segments not covered by the test suite. The report indicated that the test suite covers 100% of the lines and branches of code to be tested.
+
+### Run code coverage
+To generate the code coverage report, run the following command using CLI within the project folder where the pom.xml file is located
+```
+mvn clean test
+```
+The report will be generated inside the folder at the path: [`/target/site/jacoco/`](/target/site/jacoco/)
+
 In addition, **Mutation Testing** has been performed using [PIT Mutation Testing](https://pitest.org/) tool, which purposefully insert bugs in the existing code to verify if the test suite is robust enough to detect them. The report produced by PIT indicates that the test suite killed all the 22 generated mutations.
+
+### Run PIT Mutation Testing
+To generate Mutation Testing report, run the following command using CLI within the project folder where the pom.xml file is located
+```
+mvn test-compile org.pitest:pitest-maven:mutationCoverage
+```
+The report will be generated inside the folder at the path: [`/target/pit-reports/`](/target/pit-reports/)
 
 ## 📊 Property-based testing
 It is a testing methodology which express the property we want to test and let the test framework choose several examples.
@@ -23,7 +38,18 @@ In relation to this type of test, statistics on generated inputs can be found in
 * [`findPrimeIndex()`](/src/test/java/homework2/PrimeIndexTest.java) testing code
 
 ## 📚 Documentation
-[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1jiPd1M9VZr7YKUYfh1UiloI-DSH2-JkQ/view?usp=sharing)
+A full italian documentation can be found here: <br>
+
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1jiPd1M9VZr7YKUYfh1UiloI-DSH2-JkQ/view?usp=sharing) 
+
+The documentation contains details about the selected tests and charts generated from the data collected during property-based testing.
+
+## 🗒️Sheets
+Google Sheets have been used to organize data:
+* [Test cases planning and execution](https://docs.google.com/spreadsheets/d/1wr2W6ZA9yoIJNIwFlokRFOhL3d5EDhoPpnK5i1n1_rk/edit?usp=drive_link) <br>
+Includes test cases for specification-based testing for planning and execution
+* [Statistics data](https://docs.google.com/spreadsheets/d/1sUV3b7r_KZMjV7OaEgQO0Q5MveolsZyusIBerdMK5ks/edit?usp=drive_link) <br>
+Includes data generated through Property-based testing and then visualized with statistics
 
 ## 🌐 Collaborators:
 * Rubino Vito Marco <br>
