@@ -15,7 +15,7 @@ To generate the code coverage report, run the following command using CLI within
 ```
 mvn clean test
 ```
-The report will be generated inside the folder at the path: [`/target/site/jacoco/`](/target/site/jacoco/)
+The report will be generated inside the folder at the path: [`/target/site/jacoco/`](target/site/jacoco/)
 
 In addition, **Mutation Testing** has been performed using [PIT Mutation Testing](https://pitest.org/) tool, which purposefully insert bugs in the existing code to verify if the test suite is robust enough to detect them. The report produced by PIT indicates that the test suite killed all the 22 generated mutations.
 
@@ -24,7 +24,7 @@ To generate Mutation Testing report, run the following command using CLI within 
 ```
 mvn test-compile org.pitest:pitest-maven:mutationCoverage
 ```
-The report will be generated inside the folder at the path: [`/target/pit-reports/`](/target/pit-reports/)
+The report will be generated inside the folder at the path: [`/target/pit-reports/`](target/pit-reports/)
 
 ## 📊 Property-based testing
 It is a testing methodology which express the property we want to test and let the test framework choose several examples.
@@ -32,10 +32,15 @@ Using [jqwik](https://jqwik.net/) test engine we tested `findPrimeIndex()` metho
 In relation to this type of test, statistics on generated inputs can be found in the [documentation](https://drive.google.com/file/d/1jiPd1M9VZr7YKUYfh1UiloI-DSH2-JkQ/view?usp=sharing).
 
 ## 🗂️ Repository Structure
-* [`toCamelCase()`](/src/main/java/homework1/CaseUtils.java) source code
-* [`findPrimeIndex()`](/src/main/java/homework2/PrimeIndex.java) source code
-* [`toCamelCase()`](/src/test/java/homework1) testing code
-* [`findPrimeIndex()`](/src/test/java/homework2/PrimeIndexTest.java) testing code
+### Source codes
+* [`toCamelCase()`](src/main/java/homework1/CaseUtils.java) source code
+* [`findPrimeIndex()`](src/main/java/homework2/PrimeIndex.java) source code
+### Testing codes
+* [`toCamelCase()`](src/test/java/homework1) testing code
+* [`findPrimeIndex()`](src/test/java/homework2/PrimeIndexTest.java) testing code
+### Reports
+* [`JaCoCo`](target/site/jacoco/homework1/index.html) first homework coverage report
+* [`PITest`](target/pit-reports/index.html) first homework mutation testing report
 
 ## 📚 Documentation
 A full italian documentation can be found here: <br>
