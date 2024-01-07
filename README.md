@@ -52,7 +52,7 @@ Includes test cases for specification-based testing for planning and execution
 Includes data generated through Property-based testing and then visualized with statistics
 
 ## 🌐 Collaborators
-* Rubino Vito Marco <br>
-[![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/vitomarcorubino) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitomarcorubino/) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/11417498/marco-rubino) 
-* Signorile Simone <br>
-[![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/simonesignorile)
+* **Rubino Vito Marco** <br> Matricola: 755561 <br> Email: v.rubino16@studenti.uniba.it  <br> <br>
+[![Gmail](https://img.shields.io/badge/Gmail-ff0000?logo=gmail&logoColor=white)](mailto:v.rubino16@studenti.uniba.it) [![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/vitomarcorubino) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitomarcorubino/) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/11417498/marco-rubino) <br>
+* **Signorile Simone** <br> Matricola: 754729 <br> Email: s.signorile19@studenti.uniba.it <br> <br>
+[![Gmail](https://img.shields.io/badge/Gmail-ff0000?logo=gmail&logoColor=white)](mailto:s.signorile19@studenti.uniba.it) [![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/simonesignorile)
