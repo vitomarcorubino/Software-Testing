@@ -60,4 +60,4 @@ Includes data generated through Property-based testing and then visualized with 
 * **Rubino Vito Marco** <br>
 [![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/vitomarcorubino) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitomarcorubino/) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/11417498/marco-rubino) <br>
 * **Signorile Simone**  <br>
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/simone-signorile-37a4852ab)[![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/simonesignorile)
+[![Github](https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white)](https://github.com/simonesignorile)[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/simone-signorile-37a4852ab)
