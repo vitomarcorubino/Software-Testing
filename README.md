@@ -1,4 +1,4 @@
-# 🔍 Testing homework
+# 🔍 Software testing
 In this repository you can find two modules with testing classes of Java methods using three different testing methodologies: specification-based testing, Structural testing and property-based testing.
 
 ## 🔬 Specification-based testing
